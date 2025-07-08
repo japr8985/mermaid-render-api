@@ -71,7 +71,7 @@ const render = async (req, res) => async (req, res) => {
 
     } catch (error) {
         console.error('Error al renderizar Mermaid:', error);
-        res.status(500).json({ error: 'Error interno del servidor al renderizar el diagrama.' });
+        res.status(500).json({ error: 'Error interno del servidor al renderizar el diagrama.', log: error });
     } finally {
         if (browser) {
             await browser.close(); // Cierra el navegador de Puppeteer
