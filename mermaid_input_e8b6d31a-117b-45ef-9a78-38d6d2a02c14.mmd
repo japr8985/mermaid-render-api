@@ -1,0 +1,40 @@
+
+graph TD
+    A[Inicio: Nuevo Cliente] --> B{Tipo de Cliente?};
+    B -- B2G --> C[Onboarding B2G];
+    B -- B2B2G --> D[Onboarding B2B2G];
+    B -- B2B --> E[Onboarding B2B];
+
+    C --> F[Configuración del Servicio];
+    F --> G[Firma Contrato ];
+    G --> H[Activación del Servicio ];
+    H --> I[Formación ];
+    I --> J[Fin: Onboarding B2G];
+
+
+    D --> K[Configuración del Servicio (B2B2G)];
+    K --> L[Firma Contrato (B2B2G)];
+    L --> M[Activación del Servicio (B2B2G)];
+    M --> N[Formación (B2B2G)];
+    N --> O[Integración con Operador (B2B2G)];
+    O --> P[Fin: Onboarding B2B2G];
+
+    E --> Q[Configuración del Servicio (B2B)];
+    Q --> R[Firma Contrato (B2B)];
+    R --> S[Activación del Servicio (B2B)];
+    S --> T[Formación (B2B)];
+    T --> U[Fin: Onboarding B2B];
+
+    J --> Z[Fin];
+    P --> Z;
+    U --> Z;
+
+    subgraph 'Onboarding'
+        C
+        D
+        E
+    end
+
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style Z fill:#ccf,stroke:#333,stroke-width:2px

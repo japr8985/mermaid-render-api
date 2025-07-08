@@ -1,0 +1,15 @@
+{
+  "name": "mermaid-render-api",
+  "version": "1.0.0",
+  "description": "API para renderizados de diagramas",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Jorge Peraza",
+  "license": "MIT",
+  "dependencies": {
+    "@mermaid-js/mermaid-cli": "^11.4.2",
+    "express": "^5.1.0"
+  }
+}

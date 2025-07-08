@@ -1,0 +1,54 @@
+```mermaid
+graph TD
+    A[Inicio: Nueva Solicitud de Viaje] --> B{Solicitud válida?};
+    B -- Sí --> C[Validar disponibilidad de vehículos];
+    B -- No --> D[Notificar error al usuario: Datos incorrectos];
+    D --> E[Fin];
+    C -- Vehículo disponible --> F[Asignar vehículo al usuario];
+    C -- No hay vehículos disponibles --> G[Notificar al usuario: Sin vehículos disponibles];
+    G --> E;
+    F --> H[Notificar al conductor y usuario];
+    H --> I{Viaje iniciado?};
+    I -- Sí --> J[Monitorizar viaje en tiempo real];
+    I -- No --> K[Notificar problema al equipo de soporte];
+    K --> L[[Investigar y resolver incidencia]];
+    L --> I;
+    J --> M{Viaje finalizado?};
+    M -- Sí --> N[Calificar el viaje];
+    M -- No --> J;
+    N --> O[Generar facturación];
+    O --> P[Fin];
+
+
+    subgraph Cliente
+        B
+        D
+        F
+        G
+        H
+        I
+        M
+        N
+    end
+    subgraph Sistema
+        C
+        J
+        O
+    end
+    subgraph Conductor
+        H
+        I
+        M
+
+    end
+    subgraph Soporte
+        K
+        L
+    end
+
+    style A fill:#f9f,stroke:#333,stroke-width:2px
+    style E fill:#ccf,stroke:#333,stroke-width:2px
+    style P fill:#ccf,stroke:#333,stroke-width:2px
+
+
+```
