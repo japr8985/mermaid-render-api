@@ -11,5 +11,8 @@
   "dependencies": {
     "@mermaid-js/mermaid-cli": "^11.4.2",
     "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "@flydotio/dockerfile": "^0.7.10"
   }
 }
